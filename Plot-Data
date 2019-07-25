@@ -1,0 +1,11 @@
+"""Plot the data"""
+fig = plt.figure(figsize=(10,10))
+ax0 = fig.add_subplot(111)
+for i in range(len(r)):
+    ax0.scatter(X_tot[i],0,c=np.array([r[i][0],r[i][1],r[i][2]]),s=100) # We have defined the first column as red, the second as
+                                                                        # green and the third as blue
+for g,c in zip([gauss_1.pdf(np.linspace(-15,15)),gauss_2.pdf(np.linspace(-15,15)),gauss_3.pdf(np.linspace(-15,15))],['r','g','b']):
+    ax0.plot(np.linspace(-15,15),g,c=c,zorder=0)
+    
+    
+plt.show()
